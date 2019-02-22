@@ -1,0 +1,41 @@
+.side-bar-wrapper {
+  height: 100%;
+}
+.side-bar-wrapper .index-aside {
+  height: 100%;
+}
+.side-bar-wrapper .index-aside .aside-menu {
+  height: 100%;
+}
+.side-bar-wrapper .index-aside .aside-menu .nav-icon {
+  width: 20px;
+  height: 20px;
+}
+.side-bar-wrapper .index-aside .aside-menu .home-icon {
+  background: url("/static/image/home.svg") no-repeat center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.side-bar-wrapper .index-aside .aside-menu .list-icon {
+  background: url("/static/image/list.svg") no-repeat center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.side-bar-wrapper .index-aside .aside-menu .setting-icon {
+  background: url("/static/image/setting.svg") no-repeat center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.side-bar-wrapper .index-aside .aside-menu .is-active .home-icon {
+  background: url("/static/image/home_ac.svg") no-repeat center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.side-bar-wrapper .index-aside .aside-menu .is-active .setting-icon {
+  background: url("/static/image/setting_ac.svg") no-repeat center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.side-bar-wrapper .index-aside .el-menu {
+  overflow: hidden;
+}

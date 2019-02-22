@@ -1,0 +1,464 @@
+@CHARSET "UTF-8";
+html,body{
+width:100%;height:100%;margin:0
+}
+.inputStyle3{
+  width: 60%;
+}
+.pagination{
+  width: 100%;
+  height: 60px;
+  margin-top: 10px
+}
+.nowrap{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+img{
+width:100%;height:100%;
+}
+#content{
+height:100%;width:100%;
+}
+.content{
+height:100%;width:100%;
+}
+.top{
+  height: 25%;width: 100%;
+}
+.body{
+  height: 50%;width: 100%;
+}
+.bottom{
+  height: 25%;width: 100%;
+}
+.row5{
+  height: 100%;width:5%;
+}
+.row10{
+  height: 100%;width:10%;
+}
+.row15{
+  height: 100%;width:15%;
+}
+.row18{
+  height: 100%;width:18%;
+}
+.row20{
+  height: 100%;width:20%;
+}
+.row25{
+  height: 100%;width:25%;
+}
+.row30{
+  height: 100%;width:30%;
+}
+.row35{
+  height: 100%;width:35%;
+}
+.row40{
+  height: 100%;width:40%;
+}
+.row45{
+  height: 100%;width:45%;
+}
+.row50{
+  height: 100%;width:50%;
+}
+.row55{
+  height: 100%;width:55%;
+}
+.row60{
+  height: 100%;width:60%;
+}
+.row65{
+  height: 100%;width:65%;
+}
+.row70{
+  height: 100%;width:70%;
+}
+.row75{
+  height: 100%;width:75%;
+}
+.row80{
+  height: 100%;width:80%;
+}
+.row85{
+  height: 100%;width:85%;
+}
+.row90{
+  height: 100%;width:90%;
+}
+.row95{
+  height: 100%;width:95%;
+}
+.row105{
+  height: 100%;width:105%;
+}
+.row110{
+  height: 100%;width:110%;
+}
+.column5{
+  width: 100%;height:5%;
+}
+.column10{
+  width: 100%;height:10%;
+}
+.column15{
+  width: 100%;height:15%;
+}
+.column20{
+  width: 100%;height:20%;
+}
+.column25{
+  width: 100%;height:25%;
+}
+.column30{
+  width: 100%;height:30%;
+}
+.column35{
+  width: 100%;height:35%;
+}
+.column40{
+  width: 100%;height:40%;
+}
+.column45{
+  width: 100%;height:45%;
+}
+.column50{
+  width: 100%;height:50%;
+}
+.column55{
+  width: 100%;height:55%;
+}
+.column60{
+  width: 100%;height:60%;
+}
+.column65{
+  width: 100%;height:65%;
+}
+.column70{
+  width: 100%;height:70%;
+}
+.column75{
+  width: 100%;height:75%;
+}
+.column80{
+  width: 100%;height:80%;
+}
+.column85{
+  width: 100%;height:85%;
+}
+.column90{
+  width: 100%;height:90%;
+}
+.column95{
+  width: 100%;height:95%;
+}
+
+.inputStyle1{
+  height: 50%;width: 100%;border: none;outline: none;
+}
+.inputStyle2{
+  height: 60%;width: 100%;border-radius: 15px;border: 3px solid silver;outline:none;
+}
+/* 字体样式************************************************************************************  */
+.fontStyle1{
+  font-size: 18px;
+  font-weight: bold;
+  color: #5e5e5e;
+}
+.fontStyle2{
+  font-size: 18px;
+  font-weight: bold;
+  color: #fafafa;
+}
+.fontStyle3{
+  font-size: 12px;
+  font-weight: bold;
+  color: #424242;
+}
+.fontStyle4{
+  font-size: 5px;
+  font-weight: bold;
+  color: #fefefe;
+}
+.fontStyle6{
+  font-size: 10px;
+  font-weight: bold;
+  color: #e6351d;
+  cursor:pointer
+}
+/* 手机按钮样式************************************************************************************  */
+.mButton1{
+  width: 80px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #409EFF;
+  color: #fefefe;
+}
+/* border样式************************************************************************************  */
+.borderStyle{
+  border: 1px solid #a0a0a0;
+  border-radius: 5px;
+}
+.borderStyle1{
+  border: 1px dashed #a0a0a0;
+  border-radius: 5px;
+}
+.borderStyle2{
+  border-bottom: 1px solid #9d9d9d;
+}
+.borderStyle3{
+  border-bottom: 1px dashed #9d9d9d;
+}
+.borderStyle4{
+  border: 2px solid #a0a0a0;
+  border-radius: 5px;
+}
+.borderStyle5{
+  border: 2px dashed #a0a0a0;
+  border-radius: 5px;
+}
+/*box-shadow: h-shadow v-shadow blur spread color inset; 水平阴影的位置,垂直阴影的位置,模糊距离,阴影的尺寸,阴影的颜色,inset/outset*/
+.borderStyle6{
+  box-shadow: 0px 5px 20px 5px #717171;
+  border-radius: 5px;
+}
+.borderStyle7{
+  box-shadow: 0px 3px 15px 3px  #a0a0a0 inset;
+  border-radius: 5px;
+}
+.borderStyle8{
+  box-shadow: 0px 0px 50px 5px #ffa50d;
+  border-radius: 5px;
+}
+.borderStyle9{
+  box-shadow: 0px 3px 15px 3px #ff6120 inset;
+  border-radius: 5px;
+}
+.borderStyle10{
+  border: 5px solid #676767;
+  border-radius: 5px;
+}
+.borderStyle11{
+  border: 2px solid #0b0d0d;
+  border-radius: 5px;
+}
+.borderStyle12{
+  border: 2px solid #e6351d;
+}
+/* box样式************************************************************************************  */
+.boxStyle{
+  height: 98%;width: 98%;
+}
+.boxStyle1{
+  height: 35%;width: 20%;
+}
+.boxStyle2{
+  height: 45%;width: 20%;
+}
+.boxStyle3{
+  overflow-y: auto;
+}
+.boxStyle4{
+  height: 50%;width: 60%;
+}
+.boxStyle5{
+  overflow: hidden;
+}
+.boxStyle6{
+  overflow-y: scroll;
+}
+.boxStyle7{
+  height: 70%;width: 30%;
+}
+/* 背景颜色样式************************************************************************************  */
+.bgc0{
+  background-color: #3a3a3a;
+}
+.bgc1{
+  background-color: #777777;
+}
+.bgc2{
+  background-color: #ababab;
+}
+.bgc3{
+  background-color: #d7d7d7;
+}
+.bgc4{
+  background-color: #f04742;
+}
+.bgc5{
+  background-color: #b1e3c6;
+}
+.bgc6{
+  background-color: #38e6ad;
+}
+.bgc7{
+  background-color: #409EFF;
+}
+.bgc8{
+  background-color: #ffa50d;
+}
+.bgc9{
+  background-color: #ff6120;
+}
+.bgc10{
+  background-color: #eeeeee;
+}
+.bgc11{
+  background-color: #fbfbfb;
+}
+.bgc12{
+  background-color: #fdf9ec;
+}
+/* 图片样式************************************************************************************  */
+.imgStyle{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.imgStyle1{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+.imgStyle2{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+.imgStyle3{
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+.imgStyle4{
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+}
+.imgStyle5{
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+}
+.imgStyle6{
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+}
+.imgStyle7{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+.imgStyle8{
+  height: 50px;
+  width: 50px;
+}
+.imgStyle9{
+  height: 25px;
+  width: 25px;
+}
+.imgStyle10{
+  height: 35px;
+  width: 35px;
+}
+.imgStyle11{
+  height: 45px;
+  width: 45px;
+}
+.imgStyle12{
+  height: 65px;
+  width: 65px;
+}
+.imgStyle13{
+  height: 75px;
+  width: 75px;
+}
+.imgStyle14{
+  height: 85px;
+  width: 85px;
+}
+.imgStyle15{
+  height: 100px;
+  width: 100px;
+
+}
+
+.row-center{
+display:flex;flex-direction:row;justify-content:center;
+align-items:center;
+}
+.row-center-start{
+display:flex;flex-direction:row;justify-content:center;
+align-items:flex-start;
+}
+.row-space-around{
+display:flex;flex-direction:row;justify-content:space-around;
+align-items:center;
+}
+ .row-flex-start{
+display:flex;flex-direction:row;justify-content:flex-start;
+align-items:center;
+}
+.row-start-wrap{
+display:flex;flex-direction:row;justify-content:flex-start;
+align-items:center;flex-wrap: wrap;
+}
+.row-flex-end{
+display:flex;flex-direction:row;justify-content:flex-end;
+align-items:center;
+}
+.row-start-end{
+display:flex;flex-direction:row;justify-content:flex-start;
+align-items: flex-end;
+}
+.row-space-between{
+display:flex;flex-direction:row;justify-content: space-between ;
+align-items:center;
+}
+.column-center{
+display:flex;flex-direction:column;justify-content:center;
+align-items:center;
+}
+.column-start-start{
+display:flex;flex-direction:column;justify-content:flex-start;
+align-items:flex-start;
+}
+.column-start-center{
+display:flex;flex-direction:column;justify-content:flex-start;
+align-items:center;
+}
+.column-center-start{
+display:flex;flex-direction:column;justify-content:center;
+align-items:flex-start;
+}
+
+.column-end{
+display:flex;flex-direction:column;justify-content:flex-end;
+align-items:center;
+}
+.column-end-start{
+display:flex;flex-direction:column;justify-content:flex-end;
+align-items:flex-start;
+}
+.column-space-around{
+display:flex;flex-direction:column;justify-content:space-around;
+align-items:center;
+}
+.column-space-start{
+display:flex;flex-direction:column;justify-content:space-around;
+align-items:flex-start;
+}

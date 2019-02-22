@@ -1,0 +1,26 @@
+.login-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.login-wrapper .card-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
+.login-wrapper .card-wrap .login-title {
+  text-align: center;
+  font-size: 30px;
+  color: #666666;
+  margin-bottom: 40px;
+}
+.login-wrapper .card-wrap .el-form-item {
+  margin-bottom: 35px;
+}
+.login-wrapper .card-wrap .login-btn-wrp .el-form-item__content {
+  margin-left: 0!important;
+}
+.login-wrapper .card-wrap .el-button {
+  width: 100%;
+}
