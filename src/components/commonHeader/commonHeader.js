@@ -1,7 +1,7 @@
 export default {
     name: "commonHeader",
     created(){
-        this.userRole = this.fcn.getUser().userName
+        
     },
     data(){
         return{

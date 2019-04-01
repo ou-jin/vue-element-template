@@ -2,7 +2,6 @@ export default {
     name: "sideBar",
     created(){
         let list = this.fcn.getStorage('routeList')
-        console.log(list)
         var menuList = []
         list.forEach((s)=>{
             let menu = {

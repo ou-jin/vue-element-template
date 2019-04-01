@@ -1,10 +1,9 @@
 import 'babel-polyfill'
-import store from '../vuex/store'
 import axios from 'axios'
 import qs from 'qs'
 import lodash from 'lodash'
 import {Message} from 'element-ui'
-import Router from '../router/index'
+import Router from '../config/routerConfig'
 
 const generateApiMap = (map) => {
     let facade = {}
@@ -55,7 +54,6 @@ const sendApiInstance = (method, url,host, params, config = {}) => {
         params.UserInfo = JSON.parse(window.localStorage.getItem(flag?flag+'USER_INFO':'USER_INFO'));
     }
     params =  {input: JSON.stringify(params)};
-    store.state.loading = true;
 
     let instance = createApiInstance(config, method, url,host);
 
@@ -78,7 +76,6 @@ const sendApiInstance = (method, url,host, params, config = {}) => {
 
     instance.interceptors.response.use(
         response => {
-            store.state.loading = false;
             let {status, statusText, data} = response;
             if (errCheck(status, statusText, data) && data) {
                 if(data.newToken) localStorage.setItem(flag?flag+"AUT_TOKEN":"AUT_TOKEN", data.newToken)
@@ -95,7 +92,6 @@ const sendApiInstance = (method, url,host, params, config = {}) => {
         },
         error => {
             //  console.log('报错内容返回值',error.response, error.message);
-            store.state.loading = false;
             return Promise.reject(error).then().catch(res => {
                 if (error.response.status == 401) {
                     /*
