@@ -7,6 +7,7 @@ const globalRoutes = [
 // 定义生成主页面组件
 const mainRoutes = []
 getRouteList(page)
+localStorage.setItem('routeList',JSON.stringify(mainRoutes))
 const vueRouter = new Router({
     mode: 'history',
     routes: [...globalRoutes]

@@ -6,9 +6,9 @@ export default {
         list.forEach((s)=>{
             let menu = {
                 'title':s.meta.title,
-                icon: s.url.replace('/', ''),
-                index: s.url.replace('/', ''),
-                route: s.url,
+                icon: s.path.replace('/', ''),
+                index: s.path.replace('/', ''),
+                route: s.path,
             }
             menuList.push(menu)
         })
