@@ -1,7 +1,7 @@
 import protoRoot from "@/configFile/proto/proto"
 import protobuf from 'protobufjs'
 import axios from 'axios'
-import apiConfig from './protoApi/index'
+import apiConfig from './protoApiConfig'
 
 // 基础response模板
 let BaseResponse = protoRoot.lookupType("BaseResponse");

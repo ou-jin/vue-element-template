@@ -1,6 +1,7 @@
 
 export default [
     {
+        url:'',
         children:[
             {
                 url: '/pageOne',
@@ -10,7 +11,7 @@ export default [
                 }
             },
             {
-                web: 'https://www.baidu.com/',
+                url: 'https://www.baidu.com/',
                 meta:{
                     title:"页面3"
                 }
