@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "proto": "pbjs -t json-module -w commonjs -o src/configFile/proto/proto.js  src/configFile/proto/*.proto"
   },
   "dependencies": {
     "abs_element_ui": "^1.1.8",
