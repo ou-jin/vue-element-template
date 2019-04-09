@@ -1,6 +1,6 @@
 <template>
   <el-container class="index-wrapper">
-    <el-header height="80px">
+    <el-header height="65px">
       <!-- 公共头部 -->
       <common-header></common-header>
     </el-header>

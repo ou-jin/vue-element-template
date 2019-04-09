@@ -1,25 +1,31 @@
 <template>
   <div class="common-header-wrapper row-space-between">
-    <div class='info-banner-left'>
-      <img src="/static/image/titleIcon.svg" class="sys-icon">
-      <img src="/static/image/list_side_bar.svg" class="l-icon" @click="showSideBar">
+    <div class="info-banner-left row-center">
+      <img src="/static/image/vuejs.png" class="sys-icon">
+      <span>vue通用脚手架</span>
+      <img src="/static/icon/expant.svg" class="expand_icon" @click="showSideBar">
     </div>
 
-     <div  class="row-flex-start info-banner">
-      <img src="/static/image/user_img.png" class='user_icon' >
+    <div class="row-flex-start info-banner">
+      <img src="/static/image/user_img.png" class="user_icon">
       <el-dropdown trigger="click">
-      <span class="el-dropdown-link">
-        {{userRole}}<i class="el-icon-arrow-down el-icon--right"></i>
-      </span>
-      <el-dropdown-menu slot="dropdown" >
-        <el-dropdown-item v-for="(item,i) in roleList" :key=i  @click.native="roleChange(item)">{{item}}</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
+        <span class="el-dropdown-link">
+          {{userRole}}
+          <i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item
+            v-for="(item,i) in roleList"
+            :key="i"
+            @click.native="roleChange(item)"
+          >{{item}}</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
   </div>
 </template>
 
-<script >
+<script>
 export default {
     name: "commonHeader",
     created(){
@@ -49,12 +55,11 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style>
 .common-header-wrapper {
   width: 100%;
-  height: 80px;
-  border-bottom: 1px solid #EAEAEA;
-  box-shadow: 0px 1px 10px 1px #EAEAEA;
+  height: 65px;
+  box-shadow: 0px 1px 10px 1px #eaeaea;
 }
 .common-header-wrapper .logo {
   width: 60px;
@@ -81,30 +86,41 @@ export default {
   -webkit-background-size: contain;
   background-size: contain;
 }
-.user_icon{
-  height: 40px;width: 40px;margin-right: 15px
+.user_icon {
+  height: 40px;
+  width: 40px;
+  margin-right: 15px;
 }
-.info-banner{
-  width:200px;height:100%
+.info-banner {
+  width: 200px;
+  height: 100%;
 }
-.info-banner-left{
-  position: relative;
-  width:250px;
-  height:100%;
-  border-right:1px solid #EAEAEA;
+.info-banner-left {
+  width: 220px;
+  height: 100%;
+  border-right: 1px solid #eaeaea;
+  background: #282b33;
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
 }
-.sys-icon{
+.sys-icon {
+  width: 31px;
+  height: 29px;
+  margin-right: 10px;
+}
+.expand_icon{
+  width:16px;
+  height:14px;
+  left: 240px;
   position: absolute;
-  width: 50px;
-  height: 50px;
-  left: 100px;
-  top:15px;
 }
-.l-icon{
+.l-icon {
   position: absolute;
   width: 25px;
   height: 35px;
   right: 15px;
-  top:25px;
+  top: 25px;
 }
 </style>

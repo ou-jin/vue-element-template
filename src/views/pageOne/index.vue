@@ -1,8 +1,8 @@
 <template>
   <div>
-    <BasicTable
-      :opt="obt"
-    ></BasicTable>
+    <div style="width:1000px">
+      <BasicTable :opt="obt"></BasicTable>
+    </div>
   </div>
 </template>
 <script>
@@ -25,10 +25,10 @@ export default {
             sort: false,
             fix: "right",
             width: "200",
-            type:'butGroup',
-            butList:[
-               { text: "提交", fcn: "submit" },
-               { text: "取消", type: "danger", fcn: "cancel" }
+            type: "butGroup",
+            butList: [
+              { text: "提交", fcn: "submit" },
+              { text: "取消", type: "danger", fcn: "cancel" }
             ]
           },
           { label: "字典3", prop: "item3", sort: true, width: "100" },
@@ -130,5 +130,4 @@ export default {
 .index-wrapper .main-container {
   height: 100%;
 }
-
 </style>
