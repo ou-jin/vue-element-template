@@ -9,7 +9,6 @@ const mainRoutes = []
 getRouteList(page)
 localStorage.setItem('routeList',JSON.stringify(mainRoutes))
 const vueRouter = new Router({
-    mode: 'history',
     routes: [...globalRoutes]
 })
 vueRouter.addRoutes(

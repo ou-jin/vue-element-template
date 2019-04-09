@@ -14,6 +14,7 @@ import store from '../src/config/vuexConfig'
 import components from '../src/config/pluginConfig'
 import mixin from '../src/config/mixinConfig'
 import utils from '../src/config/generalMethod'
+import db from '../src/config/dbConfig'
 import VueRouter from 'vue-router'; 
 import http from '../src/config/jsonApi/index'
 import api from '../src/config/protoApi/protoReqConfig'
@@ -23,6 +24,7 @@ Vue.use(absElementUi)// abs_element_ui组件库
 Vue.use(VueRouter) // 路由
 Vue.use(components) //全局组件
 Vue.use(ElementUI, {size: 'small'}) // element-ui
+Vue.prototype.db = db //innerDb
 Vue.prototype.$bus = new Vue() // eventBus
 Vue.prototype.http = http // json格式http请求
 Vue.prototype.api = api // proto格式http请求

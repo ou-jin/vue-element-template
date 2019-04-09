@@ -27,7 +27,7 @@ export default [
         url: '/pageTwo',
         meta:{
             requiresAuth:true,
-            title:"页面2"
+            title:"innerDb测试"
         }
     }
 ]

@@ -1,13 +1,13 @@
 <template>
   <div class="common-header-wrapper row-space-between">
     <div class="info-banner-left row-center">
-      <img src="/static/image/vuejs.png" class="sys-icon">
+      <img :src="logo" class="sys-icon">
       <span>vue通用脚手架</span>
-      <img src="/static/icon/expant.svg" class="expand_icon" @click="showSideBar">
+      <img :src="expant" class="expand_icon" @click="showSideBar">
     </div>
 
     <div class="row-flex-start info-banner">
-      <img src="/static/image/user_img.png" class="user_icon">
+      <img :src="user_img" class="user_icon">
       <el-dropdown trigger="click">
         <span class="el-dropdown-link">
           {{userRole}}
@@ -26,6 +26,9 @@
 </template>
 
 <script>
+import logo from '../../../static/image/vuejs.png'
+import user_img from '../../../static/image/user_img.png'
+import expant from '../../../static/image/list_side_bar.svg'
 export default {
     name: "commonHeader",
     created(){
@@ -33,6 +36,9 @@ export default {
     },
     data(){
         return{
+            logo:logo,
+            expant:expant,
+            user_img:user_img,
             roleList:[
                 '退出'
             ],
