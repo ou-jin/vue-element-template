@@ -1,7 +1,7 @@
 
 export default [
     {
-        url:'',
+        url: '/pageOne',
         children:[
             {
                 url: '/pageOne',
@@ -13,7 +13,7 @@ export default [
             {
                 url: 'https://www.baidu.com/',
                 meta:{
-                    title:"页面3"
+                    title:"第三方链接-百度"
                 }
             }
         ],

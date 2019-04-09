@@ -1,31 +1,35 @@
 <template>
   <div>
-    <CommonTable
-      :opt="mainTableOpt"
-      @topSearch="()=>{this.getData(this.mainTableOpt.tableSearch.formParam)}"
-      @nextPage="(s)=>{this.getData(Object.assign(this.mainTableOpt.paginationOpt),{'pageIndex':s})}"
-      @prevPage="(s)=>{this.getData(Object.assign(this.mainTableOpt.paginationOpt,{'pageIndex':s}))}"
-      @currentChange="(s)=>{this.getData(Object.assign(this.mainTableOpt.paginationOpt,{'pageIndex':s}))}"
-      @sizeChange="(s)=>{this.getData(Object.assign(this.mainTableOpt.paginationOpt,{'pageSize':s}))}"
-      @itemClick="itemClick"
-    ></CommonTable>
-    <CommonTable
-      @add="add('second')"
-      @edit="(index)=>{this.edit({'type':'second','index':index})}"
-      @det="(i)=>{this.del({'index':i,'fcn':'deletedic','type':'second','callback':'getDataNopagina'})}"
-      :opt="secondTableOpt"
-      @bottomSearch="secondSearch"
-    ></CommonTable>
-    <CommonDialog
-      @close="()=>{this.secondFormOpt.show = false}"
-      @submit="submit({'type':'second','addfcn':'createdic','editfcn':'editdic'})"
-      :opt="secondFormOpt"
-    ></CommonDialog>
+  页面2
   </div>
 </template>
+<script>
+export default {
+  
+    created() {
+    },
+    methods: {
+        getData(obt) {
+            this.tep.getData.call(this,  {'type':'','fcn':'','obj':obt})
+        },
+        edit(obt) {
+            this.tep.edit.call(this, obt)
+        },
+        submit(obt){
+            this.tep.submit.call(this, Object.assign(obt))
+        }
+    }
+}
+</script>
+<style lang="scss">
+.index-wrapper {
+  height: 100%;
+}
+.index-wrapper .el-header {
+  padding: 0;
+}
+.index-wrapper .main-container {
+  height: 100%;
+}
 
-<script src="./index.js"></script>
-
-<style lang="less">
-@import url("./index.css");
 </style>

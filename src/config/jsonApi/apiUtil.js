@@ -3,7 +3,7 @@ import axios from 'axios'
 import qs from 'qs'
 import lodash from 'lodash'
 import {Message} from 'element-ui'
-import Router from '../config/routerConfig'
+import Router from '../../config/routerConfig'
 
 const generateApiMap = (map) => {
     let facade = {}

@@ -1,8 +1,11 @@
-import d from '../../../static/pageConfig/pageOne'
+<template>
+  <div>
+  页面3
+  </div>
+</template>
+<script>
 export default {
-    data:()=>{
-        return d
-    },
+   
     created() {
     },
     methods: {
@@ -17,3 +20,16 @@ export default {
         }
     }
 }
+</script>
+<style lang="scss">
+.index-wrapper {
+  height: 100%;
+}
+.index-wrapper .el-header {
+  padding: 0;
+}
+.index-wrapper .main-container {
+  height: 100%;
+}
+
+</style>

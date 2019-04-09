@@ -1,5 +1,4 @@
 // 在需要http请求的页面引入api
-import api from '../../api'
 
 export default {
     name: "login",

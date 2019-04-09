@@ -21,6 +21,10 @@ let obj = {
         if(flag==='')return str
         return flag + str[0].toUpperCase() + str.substring(1)
     },
+     //是否是url
+    isURL (s) {
+        return /^http[s]?:\/\/.*/.test(s)
+      }
    
 }
 export default obj

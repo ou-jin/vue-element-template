@@ -44,26 +44,104 @@
             </el-menu-item>
           </el-submenu>
         </template>
-        <!-- <template v-if="item.subs && item.subs.length">
-          <el-submenu :index="item.index" :key="item.index" :show-timeout="0" :hide-timeout="0">
-            <template slot="title">
-              <i class="nav-icon h-icon" :class="item.icon"></i>
-              <span slot="title">&nbsp;{{item.title}}</span>
-            </template>
-            <el-menu-item
-              v-for="(subItem,i) in item.subs"
-              :key="i"
-              :index="subItem.index"
-            >{{ subItem.title }}</el-menu-item>
-          </el-submenu>
-        </template>-->
       </el-menu>
     </el-aside>
   </div>
 </template>
 
-<script src="./sideBar.js"></script>
+<script>
+import page from '@/configFile/pageConfig'
+export default {
+    name: "sideBar",
+    created(){
+        this.menuList=this.creatMenu(page)
+        console.log(this.fcn)
+    },
+    data() {
+        return {
+            isCollapse: false,
+            collapseTransition: false,
+            menuList: []
+        }
+    },
+    methods: {
+        showSideBar() {
+            this.isCollapse = !this.isCollapse
+        },
+        menuChange(index) {
+        },
+        creatMenu(list){
+            var menuList = []
+            list.forEach((s)=>{
+                let menu = {
+                    'title':s.meta.title,
+                    icon: s.url.replace('/', ''),
+                    index: s.url.replace('/', ''),
+                    route: s.url,
+                    list: s.children?this.creatMenu(s.children):undefined
+                }
+                menuList.push(menu)
+            })
+            return menuList
+        },
+        barHref(s){
+           if( this.fcn.isURL(s)){
+            this.$router.push({name:'web',params:{'outSideUrl':s}})
+           }else{
+               this.$router.push({path:s})
+           }
+        }
+    },
+    computed: {
+        onRoutes() {
+            this.$store.dispatch('updateCurrentRoute', this.$route.meta.title)
+            return this.$route.path;
+        },
+    }
+}
+</script>
 
-<style lang="less">
-@import url("./sideBar.css");
+<style>
+.side-bar-wrapper {
+  height: 100%;
+}
+.side-bar-wrapper .index-aside {
+  height: 100%;
+}
+.side-bar-wrapper .index-aside .aside-menu {
+  height: 100%;
+}
+.side-bar-wrapper .index-aside .aside-menu .nav-icon {
+  width: 20px;
+  height: 20px;
+}
+.side-bar-wrapper .index-aside .aside-menu .home-icon {
+  background: url("/static/image/home.svg") no-repeat center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.side-bar-wrapper .index-aside .aside-menu .list-icon {
+  background: url("/static/image/list.svg") no-repeat center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.side-bar-wrapper .index-aside .aside-menu .setting-icon {
+  background: url("/static/image/setting.svg") no-repeat center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.side-bar-wrapper .index-aside .aside-menu .is-active .home-icon {
+  background: url("/static/image/home_ac.svg") no-repeat center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.side-bar-wrapper .index-aside .aside-menu .is-active .setting-icon {
+  background: url("/static/image/setting_ac.svg") no-repeat center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.side-bar-wrapper .index-aside .el-menu {
+  overflow: hidden;
+}
+
 </style>
