@@ -48,6 +48,39 @@ var $root = ($protobuf.roots["default"] || ($protobuf.roots["default"] = new $pr
       }
     }
   },
+  PageResponse: {
+    fields: {
+      IsSuccess: {
+        type: "bool",
+        id: 1
+      },
+      Message: {
+        type: "string",
+        id: 2
+      },
+      Token: {
+        type: "string",
+        id: 3
+      },
+      CurrentPage: {
+        type: "int32",
+        id: 4
+      },
+      PageSize: {
+        type: "int32",
+        id: 5
+      },
+      TotalRecords: {
+        type: "int32",
+        id: 6
+      },
+      data: {
+        rule: "repeated",
+        type: "google.protobuf.Any",
+        id: 7
+      }
+    }
+  },
   Person: {
     fields: {
       Id: {

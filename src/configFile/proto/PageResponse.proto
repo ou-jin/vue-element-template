@@ -1,0 +1,14 @@
+syntax = "proto3";
+option csharp_namespace = "TomTaw.eWordIMCIS.Dto.WebProto";
+import "google/protobuf/any.proto";
+
+message PageResponse {
+  bool IsSuccess = 1;
+  string Message = 2;
+  string Token = 3;
+  int32 CurrentPage=4;
+  int32 PageSize=5;
+  int32 TotalRecords=6;
+  repeated google.protobuf.Any data = 7;
+}
+
