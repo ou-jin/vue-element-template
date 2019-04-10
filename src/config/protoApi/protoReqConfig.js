@@ -2,9 +2,11 @@ import protoRoot from "@/configFile/proto/proto"
 import protobuf from 'protobufjs'
 import axios from 'axios'
 import apiConfig from './protoApiConfig'
+import { isArray } from "util";
 
 // 基础response模板
 let BaseResponse = protoRoot.lookupType("BaseResponse");
+let PageResponse = protoRoot.lookupType("PageResponse");
 
 const createRequest = (option) => {
   return axios.create({
@@ -20,15 +22,14 @@ const createRequest = (option) => {
   });
 }
 const getApiInstance = (option) => {
-  console.log(option)
   // 根据参数配置请求模板和解析模板
-   let requetProto = protoRoot.lookupType(option.requestTmp);
-   let responseProto = protoRoot.lookupType(option.responseTmp);
+  let requetProto = protoRoot.lookupType(option.requestTmp);
+  let responseProto = protoRoot.lookupType(option.responseTmp);
   let api = createRequest()
   api.interceptors.request.use(
     config => {
       config.url = option.url;
-      let data = Object.assign({},config.data)
+      let data = Object.assign({}, config.data)
       config.data = new Blob([requetProto.encode(requetProto.create(data)).finish()], { type: 'buffer' });
       return config;
     },
@@ -39,9 +40,17 @@ const getApiInstance = (option) => {
   api.interceptors.response.use(
     response => {
       const buf = protobuf.util.newBuffer(response.data);
-      let res = BaseResponse.decode(buf);
-      let resData = responseProto.decode(res.data.value);
-      return resData
+      let res = PageResponse.decode(buf);
+      if (res.IsSuccess) {
+        if (isArray(res.data)) {
+          let resList = res.data.map((s) => {
+            return responseProto.decode(s.value)
+          })
+          return resList
+        }
+        return responseProto.decode(res.data);
+      }
+      this.$message(res.Message)
     },
     error => {
     }
@@ -50,12 +59,12 @@ const getApiInstance = (option) => {
   return api
 }
 
-const getApiMap = ()=>{
+const getApiMap = () => {
   let apiList = {}
-  apiConfig.forEach((s)=>{
+  apiConfig.forEach((s) => {
     let key = Object.keys(s)[0]
     let val = s[key]
-    apiList[key]= getApiInstance(val)
+    apiList[key] = getApiInstance(val)
   })
   return apiList
 }
