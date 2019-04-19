@@ -43,7 +43,7 @@ function getRouteList (list){
         if(s.url){
             let route = {
                 path: s.url,
-                component:resolve=>require(["@/views"+s.url+"/index.vue"], resolve),
+                component:resolve=>require(["@/views"+s.url+""+s.url+".vue"], resolve),
                 name: s.url.replace('/', ''),
                 meta: s.meta
             }

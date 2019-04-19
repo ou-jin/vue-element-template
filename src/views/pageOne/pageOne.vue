@@ -7,7 +7,8 @@
 </template>
 <script>
 export default {
-  created() {},
+  created() {
+  },
   data() {
     return {
       obt: {

@@ -19,7 +19,6 @@
             v-if="item.title&&!item.list"
             :index="item.route"
             :key="item.route"
-            style="height:0px"
             @click="barHref(item.route)"
           >
               <icon-svg :icon-class="item.icon"/>
@@ -107,13 +106,13 @@ export default {
             return menuList
         },
         barHref(s){
-            console.log(s)
-            this.$router.push({path:s})
-        //    if( this.fcn.isURL(s)){
-        //     this.$router.push({name:'web',params:{'outSideUrl':s}})
-        //    }else{
-        //        this.$router.push({path:s})
-        //    }
+            // console.log(s)
+            // this.$router.push({path:s})
+           if( this.fcn.isURL(s)){
+            this.$router.push({name:'web',params:{'outSideUrl':s}})
+           }else{
+               this.$router.push({path:s})
+           }
         }
     },
     computed: {

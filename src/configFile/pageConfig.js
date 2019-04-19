@@ -29,6 +29,13 @@ export default [
             requiresAuth:true,
             title:"indexedDb测试"
         }
+    },
+    {
+        url: '/heightlight',
+        meta:{
+            requiresAuth:true,
+            title:"输入框高亮测试"
+        }
     }
 ]
 
