@@ -21,7 +21,8 @@
     "vue-axios": "^2.1.4",
     "vue-router": "^3.0.1",
     "vue-worker": "^1.2.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "xlsx": "^0.14.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -59,9 +59,10 @@ const getApiInstance = (option) => {
   return api
 }
 
-const getApiMap = () => {
+const getApiMap = async () => {
   let apiList = {}
-  apiConfig.forEach((s) => {
+  let d = await apiConfig()
+  d.forEach((s) => {
     let key = Object.keys(s)[0]
     let val = s[key]
     apiList[key] = getApiInstance(val)
