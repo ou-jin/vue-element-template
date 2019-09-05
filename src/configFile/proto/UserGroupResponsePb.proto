@@ -1,0 +1,43 @@
+syntax = "proto3";
+option csharp_namespace = "TomTaw.eWordRIS.Proto";
+
+//用户组相关返回信息格式
+message UserGroupResponsePb{
+
+//用户表
+//用户组ID
+string  userGroupID=1;
+//用户组编号
+string  userGroupCode=2;
+//用户组名称
+string  userGroupName=3;
+//用户组邮箱
+string  userGroupEmail=4;
+//用户组描述
+string  description=5;
+//所属科室
+string  observationDeptID=6;
+//所属机构
+string  organizationID=7;
+//删除标志:0-未删除，1-已删除
+bool  deletedFlag=8;
+//当前页
+int32 currentPage=9;
+//每页条数
+int32 pageSize=10;
+
+
+//用户组权限关联表
+//主键
+string  LinkID = 11;
+//关联权限ID
+repeated string  PermissionID = 12;
+
+//用户和用户组关联表
+//关联用户ID
+repeated string  UserID = 13;
+
+}
+
+
+

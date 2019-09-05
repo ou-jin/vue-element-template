@@ -27,13 +27,24 @@ Vue.use(ElementUI, {size: 'small'}) // element-ui
 Vue.prototype.db = db //innerDb
 Vue.prototype.$bus = new Vue() // eventBus
 Vue.prototype.http = http // json格式http请求
-Vue.prototype.api = api // proto格式http请求
 Vue.prototype.fcn= utils //全局通用方法
 Vue.mixin(mixin) // mixin
-new Vue({
-    el: '#app',
-    router,
-    store,
-    components: {App},
-    template: '<App/>'
+api.then(x=>{
+    Vue.prototype.api =  x // proto格式http请求
+    new Vue({
+        el: '#app',
+        router,
+        store,
+        components: {App},
+        template: '<App/>'
+    })
+}).catch(x=>{
+    new Vue({
+        el: '#app',
+        router,
+        store,
+        components: {App},
+        template: '<App/>'
+    })
 })
+   

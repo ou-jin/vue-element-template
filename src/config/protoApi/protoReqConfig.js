@@ -5,8 +5,8 @@ import apiConfig from './protoApiConfig'
 import { isArray } from "util";
 
 // 基础response模板
-let BaseResponse = protoRoot.lookupType("BaseResponse");
-let PageResponse = protoRoot.lookupType("PageResponse");
+// let BaseResponse = protoRoot.lookupType("BaseResponse");
+let PageResponse = protoRoot.lookupType("PageResponsePb");
 
 const createRequest = (option) => {
   return axios.create({
@@ -58,7 +58,9 @@ const getApiInstance = (option) => {
 
   return api
 }
-
+/* 
+如果采用excel生成js配置文件
+*/
 const getApiMap = async () => {
   let apiList = {}
   let d = await apiConfig()
@@ -69,6 +71,19 @@ const getApiMap = async () => {
   })
   return apiList
 }
+/* 
+如果是手写js配置文件
+*/
+// const getApiMap = ()=>{
+//   let apiList = {}
+//   apiConfig.forEach((s)=>{
+//     let key = Object.keys(s)[0]
+//     let val = s[key]
+//     apiList[key]= getApiInstance(val)
+//   })
+//   return apiList
+// }
+
 
 getApiMap()
 

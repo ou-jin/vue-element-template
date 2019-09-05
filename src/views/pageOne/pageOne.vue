@@ -8,6 +8,8 @@
 <script>
 export default {
   created() {
+    console.log('protoApi===')
+    console.log(this.api)
   },
   data() {
     return {

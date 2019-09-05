@@ -1,6 +1,7 @@
 import axios from 'axios'
 import XLSX from 'xlsx'
 
+
 async function  getConfigList(){
     let interfaceList = []
     // 读取本地excel文件
@@ -22,7 +23,7 @@ async function  getConfigList(){
                 interfaceObj[z['路由']+z['方法名']]={
                     url:z['路由']+'/'+z['方法名'],
                     requestTmp:z['参数Proto文件'],
-                    responseTmp:z['返回响应Proto']
+                    responseTmp:z['返回Proto文件']==='-'?'':z['返回Proto文件']
                 }
                 interfaceList.push(interfaceObj)
             })
@@ -30,4 +31,7 @@ async function  getConfigList(){
       })
       return interfaceList
 }
+
+
+
 export default getConfigList
