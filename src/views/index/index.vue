@@ -1,28 +1,72 @@
 <template>
   <el-container class="index-wrapper">
-    <el-header height="65px">
-      <!-- 公共头部 -->
-      <common-header></common-header>
+    <el-header style="height:50px">
+      <common-header ref="commomHeader"></common-header>
     </el-header>
     <el-container class="main-container">
-      <!-- 公共侧边栏 -->
       <side-bar></side-bar>
-      <!-- 内容区域 -->
-      <el-main style="background:#f2f2f2">
-        <div style="height:55px;width:100%;background:#ffffff;margin-bottom:20px" class="row-flex-start">
-          <el-breadcrumb separator="/" style='margin-left:20px'>
-            <el-breadcrumb-item>主页</el-breadcrumb-item>
-            <el-breadcrumb-item>{{$store.state.currentRoute}}</el-breadcrumb-item>
-          </el-breadcrumb>
-        </div>
-        <router-view  :key="key"></router-view>
+      <el-main>
+        <router-view :key="key"></router-view>
       </el-main>
     </el-container>
+    <div class="loading" v-if="$store.state.loading">
+      <i class="el-icon-loading"></i> 请稍等……
+    </div>
   </el-container>
 </template>
 
-<script src="./index.js"></script>
+<script >
+export default {
+  name: "index",
+  created() {},
+  data() {
+    return {
+      freeAuth: false
+    };
+  },
+  methods: {},
+  computed: {
+    key() {
+      return this.$route.name !== undefined
+        ? this.$route.name + +new Date()
+        : this.$route + +new Date();
+    }
+  }
+};
+</script>
 
-<style lang="less">
-@import url("./index.css");
+<style >
+.index-wrapper {
+  height: 100%;
+  min-width: 1850px;
+  overflow-x: auto;
+  background: #eaedf2;
+}
+.index-view {
+  height: 100%;
+}
+.index-wrapper .el-main {
+  padding: 10px !important;
+}
+
+.index-wrapper .el-header {
+  padding: 0;
+  height: 50px !important;
+}
+.index-wrapper .main-container {
+  height: 100%;
+  padding-left: 64px;
+  position: relative;
+}
+.loading {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1000;
+  font-size: 16px;
+  background: #fff;
+  padding: 10px 20px;
+  border: 2px solid #f5f5f5;
+  color: #00c1de;
+}
 </style>

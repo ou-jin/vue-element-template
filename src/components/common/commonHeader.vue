@@ -1,16 +1,13 @@
 <template>
   <div class="common-header-wrapper row-space-between">
-    <div class="info-banner-left row-center">
+    <div class="info-banner-left row-flex-start">
       <img :src="logo" class="sys-icon">
       <span>vue通用脚手架</span>
-      <img :src="expant" class="expand_icon" @click="showSideBar">
     </div>
-
     <div class="row-flex-start info-banner">
-      <img :src="user_img" class="user_icon">
       <el-dropdown trigger="click">
         <span class="el-dropdown-link">
-          {{userRole}}
+          你好,{{userRole}}
           <i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
@@ -42,7 +39,7 @@ export default {
             roleList:[
                 '退出'
             ],
-            userRole:''
+            userRole:'超级管理员'
         }
     },
     methods: {
@@ -64,8 +61,9 @@ export default {
 <style>
 .common-header-wrapper {
   width: 100%;
-  height: 65px;
-  box-shadow: 0px 1px 10px 1px #eaeaea;
+  height: 50px;
+  background: #414549;
+  color: #ffffff;
 }
 .common-header-wrapper .logo {
   width: 60px;
@@ -104,9 +102,8 @@ export default {
 .info-banner-left {
   width: 220px;
   height: 100%;
-  border-right: 1px solid #eaeaea;
-  background: #282b33;
   font-size: 14px;
+  margin-left: 10px;
   font-family: PingFangSC-Regular;
   font-weight: bold;
   color: rgba(255, 255, 255, 1);

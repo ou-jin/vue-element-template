@@ -12,12 +12,6 @@ export default [
                     title:"页面1"
                 }
             },
-            {
-                url: 'https://www.baidu.com/',
-                meta:{
-                    title:"第三方链接-百度"
-                }
-            }
         ],
         meta:{
             title:"多页面"
@@ -27,16 +21,9 @@ export default [
         url: '/pageTwo',
         meta:{
             requiresAuth:true,
-            title:"indexedDb测试"
+            title:"页面2"
         }
     },
-    {
-        url: '/heightlight',
-        meta:{
-            requiresAuth:true,
-            title:"输入框高亮测试"
-        }
-    }
 ]
 
 
