@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "abs_element_ui": "^1.1.8",
-    "dexie": "^2.0.4",
+    "dexie": "^3.2.2",
     "element-ui": "^2.4.11",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
